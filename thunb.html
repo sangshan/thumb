@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .thunb{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 100px;
+            left: 50%;
+            margin-left: -100px;
+            cursor: pointer;
+        }
+        .thunb>div{
+            position: absolute;
+        }
+        .t1{
+            width: 45px;
+            height: 75px;
+            border: 5px solid #465c84;
+            transform: skew(5deg, 0);
+            border-radius: 4px;
+            border-right: none;
+            background: #6f80b1;
+            position: relative;
+        }
+        .t1::before{
+            content: "";
+            display: block;
+            position: relative;
+            left: 3px;
+            top: -5px;
+            width: 45px;
+            height: 75px;
+            border: 5px solid #465c84;
+            transform: skew(-5deg, 0);
+            border-left: none;
+            border-right: 8px solid #465c84;
+            border-radius: 4px;
+            background: #6f80b1;
+        }
+        .i1{
+            width: 35px;
+            height: 60px;
+            transform: skew(5deg, 0);
+            border-radius: 4px;
+            border-right: none;
+            background: #6078a9;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .i1::before{
+            content: "";
+            display: block;
+            position: relative;
+            left: 3px;
+            width: 35px;
+            height: 60px;
+            transform: skew(-5deg, 0);
+            border-left: none;
+            border-radius: 4px;
+            background: #6078a9;
+        }
+        .i1:after{
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            left: 25px;
+            top: -10px;
+            transform: skew(-5deg, 0);
+            border-radius: 5px;
+            position: relative;
+            background: radial-gradient(#aab5b8, white, white);
+
+        }
+        .t2{
+            width: 10px;
+            height: 60px;
+            border: 5px solid #465c84;
+            border-right: none;
+            left: 53px;
+            top: 5px;
+            background: #dce7eb;
+        }
+        .t2:before{
+            content: "";
+            display:block;
+            border: 5px solid #465c84;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 1px;
+            top:-5px;
+            left: -5px;
+            width: 10px;
+            height: 5px;
+            position: relative;
+            background: #dce7eb;
+            transform: skew(0 , -20deg);
+        }
+        .t3{
+            width: 75px;
+            height: 75px;
+            left: 67px;
+            top: 8px;
+            background: #dce7eb;
+            border-top-right-radius: 5px;
+        }
+        .t3:before{
+            content: "";
+            display: block;
+            width: 65px;
+            height: 10px;
+            top:62px;
+            border: 5px solid #465c84;
+            border-left: none;
+            border-top: none;
+            position: relative;
+            border-bottom-left-radius: 5px;
+            background: #dce7eb;
+        }
+        .t3:after{
+            content: "";
+            display: block;
+            width: 5px;
+            height: 12px;
+            top: 48px;
+            left: -2px;
+            border-left: 5px solid #465c84;
+            transform: skew(20deg, 0);
+            position: relative;
+            border-bottom-left-radius: 3px;
+            border-top-left-radius: 3px;
+        }
+        .t4{
+            width: 30px;
+            height: 60px;
+            top: -50px;
+            left: 49px;
+            border-right: 5px solid #465c84;
+            border-top-right-radius: 5px 30px;
+            border-bottom-right-radius: 10px 30px;
+            position: relative;
+            transform: rotate(32deg);
+            background:transparent;
+            z-index: -1;
+            background: #fff;
+        }
+        .t4:before{
+            content: "";
+            display: block;
+            width: 15px;
+            height: 20px;
+            top: -15px;
+            left: 22px;
+            border: 5px solid #465c84;
+            border-bottom: none;
+            border-right: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 1px;
+            transform: rotate(-32deg);
+            position: relative;
+            background: #dce7eb;
+        }
+        .t4::after{
+            content: "";
+            display: block;
+            width: 7px;
+            height: 28px;
+            top: -43px;
+            left: 33px;
+            border-right: 5px solid #465c84;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 3px;
+            transform: rotate(-32deg) skew(10deg, 0);
+            position: relative;
+        }
+        .t5{
+            width: 40px;
+            height: 60px;
+            top: -40px;
+            left: 68px;
+            background:#dce7eb;
+            position: relative;
+            z-index: -2;
+        }
+        .t6{
+            width: 46px;
+            height: 33px;
+            border: 5px solid #465c84;
+            border-top: none;
+            border-right: none;
+            transform: skew(-10deg, 0);
+            border-bottom-left-radius: 5px;
+            left: 102px;
+            top: -26px;
+            background: #fff;
+        }
+        .t6::before{
+            content: "";
+            display: block;
+            width: 20px;
+            height: 68px;
+            top: 33px;
+            left: 37px;
+            background:#dce7eb;
+            position: relative;
+            border: 5px solid #465c84;
+            border-right: none;
+            border-left: none;
+            border-top-right-radius: 10px 10px;
+            border-bottom-right-radius: 10px 10px;
+        }
+        .t7{
+            width: 15px;
+            height: 30px;
+            border: 5px solid #465c84;
+            left: 135px;
+            top: 2px;
+            border-radius: 15px;
+            background: #dce7eb;
+            transform: rotate(80deg);
+            z-index: -1;
+        }
+        .t7::before{
+            content: "";
+            display: block;
+            width: 12px;
+            height: 28px;
+            border: 5px solid #465c84;
+            left: 13px;
+            top: 2px;
+            border-radius: 10px;
+            background: #dce7eb;
+            position: relative;
+        }
+        .t7::after{
+            content: "";
+            display: block;
+            width: 12px;
+            height: 28px;
+            border: 5px solid #465c84;
+            left: 30px;
+            top: -29px;
+            border-radius: 10px;
+            background: #dce7eb;
+            position: relative;
+        }
+        .t8{
+            width: 12px;
+            height: 23px;
+            border: 5px solid #465c84;
+            left: 128px;
+            top: 56px;
+            transform: rotate(80deg);
+            border-radius: 10px;
+            background: #dce7eb;
+            position: relative;
+            z-index: -1;
+        }
+        .count{
+            text-align: center;
+        }
+    </style>
+    <title>大拇指</title>
+    <script src="https://cdn.bootcss.com/systemjs/0.21.0/system.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<body>
+<div class="thunb">
+    <div class="t1">
+        <div class=i1></div>
+    </div>
+    <div class="t2"></div>
+    <div class="t3"></div>
+    <div class="t4"></div>
+    <div class=t5></div>
+    <div class=t6></div>
+    <div class=t7></div>
+    <div class=t8></div>
+</div>
+<div class="count">0</div>
+<script>
+    SystemJS.import('./lib/thumb.js').then(function(m) {
+        const thunb=new m.thumb();
+        $.extend({
+            add:function(){
+                thunb.change();
+            }
+        });
+        $('.thunb').on('click', function(){
+            $.add();
+        })
+    });
+</script>
+</body>
+</html>
